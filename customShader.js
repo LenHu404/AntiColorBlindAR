@@ -25,7 +25,7 @@
 		void main() {
 			gl_FragColor = texture2D( tDiffuse, vUv );
 			gl_FragColor.a *= opacity;
-			vec4 color = vec4(1.0,0.0,0.0,0.5);
+			vec4 color = gl_FragColor;
 			
 			// Andere Angehensweise
 			// Es wird der durchschnitt der unterschiede von grün zu den andern bzw. rot zu den anderen ausgelesen
@@ -44,7 +44,7 @@
 			}
 			else{
 				// wenn weder grün noch rot wahrgenommen wird, wird einfach der Pixel ohne manipulation weitergegeben
-				gl_FragColor = color;
+				gl_FragColor = vec4(0.0,1.0,0.0,0.01);
 			}
 		}`
 
